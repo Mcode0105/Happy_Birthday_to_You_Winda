@@ -210,7 +210,7 @@ Swal.fire({
       },1000)
     }
     $("#waktu").text(`tunggu sampai jam 00:00:00 18-Mei-2021`);
-    $('#mulai').text(`Tunggu ${jam} Jam ${menit} Menit ${detik} detik`);
+    $('#mulai').text(`Tunggu ${jam} Jam ${menit} Menit ${detik} detik lagi ya..`);
   },1000);
 });
 
