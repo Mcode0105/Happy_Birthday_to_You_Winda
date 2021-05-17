@@ -4,7 +4,7 @@ $(document).ready(function () {
    let waktu = 10;
   const ht =  setInterval(function(){
     const waktu_sekarang = new Date().getTime()
-    const waktu_tujuan = new Date('May 18 2021 00:00:00').getTime();
+    const waktu_tujuan = new Date('May 17 2021 12:0360:00').getTime();
     const selisih = waktu_tujuan - waktu_sekarang;
     const jam = Math.floor(selisih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
     const menit = Math.floor(selisih % (1000 * 60 * 60) / (1000 * 60 ));
