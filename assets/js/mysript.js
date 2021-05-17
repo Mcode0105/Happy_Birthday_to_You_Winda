@@ -15,6 +15,7 @@ $(document).ready(function () {
     let tanggal1 = waktu.getDate();
     let bulan1 = waktu.getMonth();
     let tahun1 = waktu.getFullYear();
+    console.log(waktu);
     if (selisih <= 0) {
       $('#gambar').show('slow');
       $('#mulai').hide();
@@ -170,7 +171,7 @@ Swal.fire({
                                             }) 
                                            .then((l) => {
                                              if(l.isConfirmed){
-                                              window.location.href=`https://api.whatsapp.com/send?phone=6285335650431&text=TANGGAL PENTING ${tanggal}-${bulan}-${tahun} , ${jam}:${menit}`;
+                                              window.location.href=`https://api.whatsapp.com/send?phone=6285335650431&text=TANGGAL PENTING ${dt}`;
                                              }
                                            })
                                         }
