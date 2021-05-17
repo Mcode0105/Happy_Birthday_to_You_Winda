@@ -1,17 +1,31 @@
 $(document).ready(function () {
+    
    $('#exampleModal').modal('show');
    let waktu = 10;
   const ht =  setInterval(function(){
-    waktu--; if (waktu < 1) {
+    const waktu_sekarang = new Date().getTime()
+    const waktu_tujuan = new Date('May 18 2021 00:00:00').getTime();
+    const selisih = waktu_tujuan - waktu_sekarang;
+    const jam = Math.floor(selisih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+    const menit = Math.floor(selisih % (1000 * 60 * 60) / (1000 * 60 ));
+    const detik = Math.floor(selisih % (1000 * 60) / 1000 );
+    let waktu = new Date();
+    let menit1 = waktu.getMinutes();
+    let jam1 = waktu.getHours();
+    let tanggal1 = waktu.getDate();
+    let bulan1 = waktu.getMonth();
+    let tahun1 = waktu.getFullYear();
+    if (selisih <= 0) {
       $('#gambar').show('slow');
       $('#mulai').hide();
        clearInterval(ht);
-      let waktu2 = 5;
+      let waktu2 = 10;
       const ht2 = setInterval(function(){
           waktu2--; if (waktu2 < 1 ) {
             clearInterval(ht2);
             $('#exampleModal').modal('hide');
 // blok kode
+// ulang tahun
 Swal.fire({
   title: 'Assalamaualaikum Winda, Selamat Malam..!',
   showConfirmButton: true,
@@ -29,12 +43,16 @@ Swal.fire({
 })
 .then((next) => {
   if(next.isConfirmed){
+    let audio = new Audio('tahun.mp3');
+    audio.play();
     (async () => {
      await Swal.fire({
+          title : 'Yang pertama',
           icon : 'info',
-          text: 'Entah Kenapa di saat itu saya merassakan hal yang berbeda dari sebelumnya, kamu hadir dengan membawa sebuah awal kenyamanan yang belum pernah saya rasakan sebelumnya,'
-           +' atau mungkin saya yang terlalu menaruh rasa ke kamu, atau mungkin ada hal lain yang bisa menjadikan kita sampai sekarang ini'
-           +' tak bisa saya menahan nya,dan juga rasa khawatir yang selalu mengahntui ku... ',
+          text: `Selamat Ulang tahun yang ke 21 mbak, semoga di tahun ini akan menjadi lebih baik lagi kedepanya lebih di mantapkan lagi untuk
+          masa depanya dann di permudah segala urusanya, dan semoga apa yang di impikan akan cepet tercapai, dan juga bisa menjadi pribadi yang kuat, siap akan menghadapi
+          cobaan dan rintangan kedepanya, yang selalu sabar dan bertawakkal kepada Allah SWT, dan juga selalu berada di lindungan Allah SWT,
+          hanya ini yang saya berikan kepada kamu sangat lah sederhana, yang saya harapkan hanya lah doa yang terbaik buat kita,. ISTAJAB LANA YA RABB.. AMIINN.  `,
           showClass: {
               popup: 'animate__animated animate__flipInX'
             },
@@ -49,9 +67,17 @@ Swal.fire({
               Swal.fire({               
                   showConfirmButton: true,    
                   icon : 'info',
-                  text : `Dan Sekarang saya sudah terlanjur merasakan kenyamanan atas yang sudah kamu berikan ke padaku'
-                   saya mengerti , saya dan kamu sama sama belum mengetahui satu sama lain, setidaknya kita bisa mengetahui nya di kemudian hari,
-                   kurasa ini merupakan kejujuran, dan tidak dapat membohongi hati ini, dan saya berharap kamu juga merasakan dan mengetahui apa yang saya rasakan sekarang ini.`,            
+                  title : 'Yang Ke-2',
+                  text : `di hari ulang tahun ini, saya ingin memberikan suatu hal yang mungkin bisa menjadi hal terbaik atau terindah di hari ini, dimana saya awal nya sudah
+                  membuka lebih awal ke samean yaitu tentang mimpi ku,memang disitu penuh dengan tanda tanya yang sangat membingungkan, tapi saya sendiri yakin insyallah bisa
+                  saya sampaikan lewat dunia nyata, dan semoga apa yang saya rasakan dari kemarenya , dari komunikasi kita, dll itu menjadi jembatan yang mampu menyatukan
+                  jalan yang terpisah, mungkin di kala itu, mbak nya waktu menjalani kesibukan, saya hanya bisa menunggu setaip waktu, saya selipkan waktu senggang hanya melihat status whatsapp nya,
+                  saya hanya berfikir positif, agar hati ini tidak merasakan keraguan, saya hanya bisa diam, dan tak berani bertanya tanya apa apa.
+                  maaf mbak, jika saya itu kadang crewet selalu mengingatkan mbak tentang ini lah, itu lah, tapi tanpa mbak sadari, itu saya lakukan demi kebaikan dan juga melaksanakan kewajiban
+                  kepada Allah SWT..
+                  dari semua itu, bukan membuat saya MENYERAH atau MUNDUR, akan tetapi  saya berfikir ini lah yang dinamakan PERJUANGANN AWAL
+
+                   `,            
                   confirmButtonText: `Next`,
                   showClass: {
                       popup: 'animate__animated animate__flipInY'
@@ -62,13 +88,17 @@ Swal.fire({
                 })
                 .then((b) => {
                   if(b.isConfirmed){
+                    let audio = new Audio('tahun.mp3');
+                    audio.play();
                       Swal.fire({               
                           showConfirmButton: true, 
                           showDenyButton: true,
                           denyButtonText: `Tidak`,  
                           icon : 'question', 
-                          text : `bismillahhirrohmanirrohim, saya ingin jujur dan memberanikan diri , untuk bisa mengisi hatinya kamu, sebagai PENDAMPING MU (kekasih),
-                           jawab dengan hati nya kamu, {PILIH IYA, JIKA MENERIMA, PILIH TIDAK JIKA MENOLAKNYA} `,            
+                          text : `saya rasa ini menjadi lembaran yang terakhir untuk berbicara tentang hal ta'ruf dan saya ingin jujur selama ini dan saya tidak sanggup menahan beban khawaitr atau keraguan.
+                          saya hanya mempunya rasa tanggung jawab, kasih sayang , perduli, kesabaran dan saya akan berusaha bisa mnuntun kita bersama di jalan yang benar,
+                          saya mengagumi dan suka sama samean mbak, ingin sekali saya bisa mengisi hati nya kamu dan bisa bersama kamu,
+                          BISMILLAH jika mbak menerima nya , bisa lanjutkan dengan tekan (IYA), jika mbak menolak bisa menkan (TIDAK)`,            
                           confirmButtonText: `Iya`,
                           showClass: {
                               popup: 'animate__animated animate__rotateIn'
@@ -121,7 +151,7 @@ Swal.fire({
                                         });
                                         if (alas) {
                                           let dt = new Date();
-                                          let menit = dt.getMinutes();
+                                          let menit1 = dt.getMinutes();
                                           let jam = dt.getHours();
                                           let tanggal = dt.getDate();
                                           let bulan = dt.getMonth();
@@ -140,7 +170,7 @@ Swal.fire({
                                             }) 
                                            .then((l) => {
                                              if(l.isConfirmed){
-                                              window.location.href=`https://api.whatsapp.com/send?phone=6285335650431&text=TANGGAL PENTING ${tanggal} - ${bulan} - ${tahun} , ${jam}:${menit}`;
+                                              window.location.href=`https://api.whatsapp.com/send?phone=6285335650431&text=TANGGAL PENTING ${tanggal}-${bulan}-${tahun} , ${jam}:${menit}`;
                                              }
                                            })
                                         }
@@ -173,20 +203,15 @@ Swal.fire({
 })
 // akhir blok kode
 
-
           }
           $('#mulai2').text(`Eittsss..! ${waktu2} Detik lagi Ya..`);
+
       },1000)
     }
-    $('#mulai').text(`Tunggu ${waktu} Detik lagi Ya`);
+    $("#waktu").text(`tunggu sampai jam 00:00:00 18-Mei-2021`);
+    $('#mulai').text(`Tunggu ${jam} Jam ${menit} Menit ${detik} detik`);
   },1000);
 });
-
-
-
-
-
-
 
 window.setInterval("waktu()", 1000);
     function waktu() {
